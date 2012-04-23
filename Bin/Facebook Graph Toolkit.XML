@@ -1,0 +1,2440 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Facebook Graph Toolkit</name>
+    </assembly>
+    <members>
+        <member name="T:Facebook_Graph_Toolkit.Helpers.AppManager">
+            <summary>
+            Provides methods to manage a Facebook Application
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.AppManager.GetAppAccessToken">
+            <summary>
+            Gets the App Access Token of this app using the configuration stored in web.config
+            </summary>
+            <returns>App Access Token</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.AppManager.GetAppAccessToken(System.String,System.String)">
+            <summary>
+            Gets the App Access Token of the specified Facebook Application
+            </summary>
+            <param name="FacebookAppID">Application ID</param>
+            <param name="FacebookAppSecret">Application Secret</param>
+            <returns>App Access Token</returns>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Link">
+            <summary>
+            A link shared on a user's wall
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.GraphApiObject">
+            <summary>
+            Represents a Graph Api object in Facebook
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.GraphApiObject.data">
+            <summary>
+            JsonObject data
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.GraphApiObject.#ctor(JSON.JsonObject)">
+            <summary>
+            Constructor with given JsonObject
+            </summary>
+            <param name="JO">JsonObject which contains the data in this object</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.GraphApiObject.ToString">
+            <summary>
+            The string representation of the JsonObject behind
+            </summary>
+            <returns>String representation of JsonObject</returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.GraphApiObject.JsonData">
+            <summary>
+            The JsonObject behind
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.ID">
+            <summary>
+            The link ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.Owner">
+            <summary>
+            The user that created the link
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.SharedURL">
+            <summary>
+            The URL that was shared
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.Name">
+            <summary>
+            The name of the link
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.Caption">
+            <summary>
+            The caption of the link (appears beneath the link name)
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.Description">
+            <summary>
+            A description of the link (appears beneath the link caption)
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.IconUrl">
+            <summary>
+            A URL to the link icon that Facebook displays in the news feed
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.ThumbnailUrl">
+            <summary>
+            A URL to the thumbnail image used in the link post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.Message">
+            <summary>
+            The optional message from the user about this link
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Link.CreatedTime">
+            <summary>
+            The time the message was published
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.Rsvp">
+            <summary>
+            A user's rsvp to an event
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Rsvp.NotReplied">
+            <summary>
+            The user has not replied to the event invitation
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Rsvp.Maybe">
+            <summary>
+            The user replied "Maybe" to the event invitation
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Rsvp.Attending">
+            <summary>
+            The user is addending the event
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Rsvp.Declined">
+            <summary>
+            The user declined the event invitation
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.BasicUserData">
+            <summary>
+            Represents basic data about the user who is browsing this Iframe Application
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicUserData.Country">
+            <summary>
+            Country of current user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicUserData.Locale">
+            <summary>
+            Locale of current user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicUserData.MinAge">
+            <summary>
+            Minimum age of current user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicUserData.MaxAge">
+            <summary>
+            Maximum age of current user
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.Dialog">
+            <summary>
+            The Dialog class contains methods that return urls of Facebook dialogs
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Dialog.GetAddPageTabUrl(System.String,System.String,Facebook_Graph_Toolkit.DialogDisplayType)">
+            <summary>
+            Gets the url that prompts the user to add a Page Tab
+            </summary>
+            <param name="FacebookAppID">Facebook Application ID</param>
+            <param name="RedirectAddress">Address which the user will be redirected to after the dialog</param>
+            <param name="Display">Display mode of the dialog</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Dialog.GetAppRequestUrl(System.String,System.String,Facebook_Graph_Toolkit.DialogDisplayType,Facebook_Graph_Toolkit.AppRequestFilter,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets the url that prompts the user to send application requests
+            </summary>
+            <param name="FacebookAppID">Facebook Application ID</param>
+            <param name="Message">The message the receiving user will see. Must not exceed 255 characters</param>
+            <param name="TargetID">A user ID or username who must be a friend of the sender. If this is specified, the user will not have a choice of recipients. If this is omitted, the user will see a friend selector and will be able to select a maximum of 50 recipients.</param>
+            <param name="Filter">Specifies which users will appear in the friend selector</param>
+            <param name="RedirectAddress">An address where users will be redirected to this address after the dialog.</param>
+            <param name="Display">How the dialog page is intended to be displayed.</param>
+            <param name="FriendSelectorTitle">The title of the friend selector. Must not exceed 50 characters.</param>
+            <param name="TrackingData">Tracking Data which is stored in the AppRequest object on Facebook.</param>
+            <returns>A url the user can be redirected to send application requests</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Dialog.GetFeedDialogUrl(System.String,System.String,Facebook_Graph_Toolkit.DialogDisplayType,System.String,System.String,System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment,Facebook_Graph_Toolkit.FacebookObjects.PostAction)">
+            <summary>
+            Gets the url that prompts the user to post to the wall
+            </summary>
+            <param name="FacebookAppID">Facebook Application ID</param>
+            <param name="RedirectAddress">An address where users will be redirected to this address after the dialog.</param>
+            <param name="PosterID">The ID or username of the user posting the message. If unspecified, default is current user. If specified, must be ID of the user or of a page that the user administers.</param>
+            <param name="TargetID">The ID or username of the profile that this story will be published to. If unspecified, default is the value of <c>PosterID</c></param>
+            <param name="PictureUrl">The Url to a picture attached to this post.</param>
+            <param name="Source">The Url to a media file (e.g. SWF or video file) attached to this post. If both <c>source</c> and <c>picture</c> are specified, only <c>source</c> is used.</param>
+            <param name="Link">A Link Attachment to this post.</param>
+            <param name="Action">An action link that appears next to "Comment" and "Like".</param>
+            <param name="Display">How the dialog page is intended to be displayed.</param>
+            <returns>A url where the user can be redirected to post something on the wall</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Dialog.GetAddFriendDialogUrl(System.String,System.String,Facebook_Graph_Toolkit.DialogDisplayType,System.String)">
+            <summary>
+            Gets a url that prompts the user to add a friend. If the opposite side has already sent a friend request, this dialog prompts the user to confirm the friend request.
+            </summary>
+            <param name="FacebookAppID">Facebook Application ID</param>
+            <param name="RedirectAddress">An address relative where users will be redirected to this address after the dialog.</param>
+            <param name="Display">How the dialog page is intended to be displayed.</param>
+            <param name="TargetID">The UserID or Username of whom to be added as friend</param>
+            <returns>A Url to redirect the user to add another user as a friend</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Dialog.GetSendDialogUrl(System.String,System.String,Facebook_Graph_Toolkit.DialogDisplayType,System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment)">
+            <summary>
+            Gets a url that prompts the user to send a message
+            </summary>
+            <param name="FacebookAppID">Facebook Application ID</param>
+            <param name="RedirectAddress">An address where users will be redirected to this address after the dialog.</param>
+            <param name="Display">How the dialog page is intended to be displayed.</param>
+            <param name="TargetID">A UserID or Username to which to send the message</param>
+            <param name="PictureUrl">The Url of the picture that is displayed next to the link, if a link is provided. If unspecified, a picture will be automatically picked by Facebook and displayed next to the link.</param>
+            <param name="Link">A link attached to this message. Note that the Caption property of the LinkAttachment object is ignored.</param>
+            <returns>A url the user can be redirected to send a message</returns>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.AppRequestFilter">
+            <summary>
+            Enumeration of filter settings of an Facebook Application Request
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.AppRequestFilter.All">
+            <summary>
+            All friends of the current user will appear in the friend selector
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.AppRequestFilter.AppUsersOnly">
+            <summary>
+            Only those friends who are using the application will appear in the friend selector
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.AppRequestFilter.NonAppUsersOnly">
+            <summary>
+            Only those friends who are not using the application will appear in the friend selector
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.DialogDisplayType">
+            <summary>
+            Enumeration of Facebook Dialogs display types
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.DialogDisplayType.FullPage">
+            <summary>
+            Renders a full page dialog
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.DialogDisplayType.Popup">
+            <summary>
+            Reders a dialog to be used in browser popup
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Group">
+            <summary>
+            A Facebook group
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Group.#ctor(System.String)">
+            <summary>
+            Gets the public information of a Facebook Group
+            </summary>
+            <param name="GroupID">Group ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Group.#ctor(System.String,System.String)">
+            <summary>
+            Gets the information of a Facebook Group
+            </summary>
+            <param name="GroupID">Group ID</param>
+            <param name="AccessToken">Access Token</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Group.GetFeed(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets a Group's wall
+            </summary>
+            <param name="GroupID">Group ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The group's wall</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Group.GetMembers(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the members of a Group
+            </summary>
+            <param name="GroupID">Group ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>A list of members</returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.ID">
+            <summary>
+            The group ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.Owner">
+            <summary>
+            The profile that created this group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.Name">
+            <summary>
+            The name of the group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.Description">
+            <summary>
+            A brief description of the group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.GroupPrivacy">
+            <summary>
+            The privacy setting of the group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.IconUrl">
+            <summary>
+            The URL for the group's icon
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Group.UpdatedTime">
+            <summary>
+            The last time the group was updated
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.LikedPage">
+            <summary>
+            Information about a Page that is liked by a user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LikedPage.Name">
+            <summary>
+            Name of the Page
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LikedPage.Category">
+            <summary>
+            Category of the Page
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LikedPage.ID">
+            <summary>
+            Page ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LikedPage.LikedTime">
+            <summary>
+            The time this Page is liked
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.Privacy">
+            <summary>
+            The privacy setting of a group / event
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Privacy.Open">
+            <summary>
+            An open group / event
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Privacy.Closed">
+            <summary>
+            A closed group / event
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Privacy.Secret">
+            <summary>
+            A secret group / event
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment">
+            <summary>
+            represents a link attachment in a Facebook Post
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new link attachment of a Facebook Post
+            </summary>
+            <param name="Name">The name of the link</param>
+            <param name="URL">The URL of the link</param>
+            <param name="Caption">The caption of the link</param>
+            <param name="Description">The description of the link</param>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment.Name">
+            <summary>
+            The name of the link
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment.URL">
+            <summary>
+            The URL of the link
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment.Caption">
+            <summary>
+            The caption of the link
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment.Description">
+            <summary>
+            The description of the link
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.GroupBookmark">
+            <summary>
+            Represents a Facebook user's bookmark of a Facebook Group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupBookmark.Name">
+            <summary>
+            Name of the Group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupBookmark.ID">
+            <summary>
+            Group ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupBookmark.Version">
+            <summary>
+            Version that the Group is using
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupBookmark.BookmarkOrder">
+            <summary>
+            Order of this bookmark in the user's bookmark list
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.SocialPage">
+            <summary>
+            Inherit this class in a page that is not inside a Facebook Canvas App page to bring Facebook integrations to this page
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.SocialPage.RequireLogin">
+            <summary>
+            Whether the user is required to authorize the application to view this page
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.SocialPage.Permissions">
+            <summary>
+            The user will be prompted to grant these Permissions at authorization
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.SocialPage.FacebookAppInfo">
+            <summary>
+            Manages Facebook Application configuration of this page
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.SocialPage.RedirectToFacebookAuthorization">
+            <summary>
+            Redirect the user to authorize the Application
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.SocialPage.OnLoad(System.EventArgs)">
+            <summary>
+            Event handler of 'OnLoad' event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.SocialPage.Api">
+             <summary>
+            Stores the current Access Token and provides methods to make Api calls
+             </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.TestUser">
+            <summary>
+            Repesents a Facebook Application Test User
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookObjects.TestUser.ToString">
+            <summary>
+            Returns a string representation of the current Test User
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.TestUser.UserID">
+            <summary>
+            User ID of Test User
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.TestUser.AccessToken">
+            <summary>
+            Access Token to be used to make API calls on behalf of the test user. Available only if app has been installed by test user.
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.TestUser.LoginUrl">
+            <summary>
+            An url to login as the test user. Expires after an hour.
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.TestUser.Email">
+            <summary>
+            Email address to be used if logging in manually
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.TestUser.Password">
+            <summary>
+            Password to be used if logging in manually. The password should be stored as it is only returned on the creation of the test user.
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Notification">
+            <summary>
+            Represents a Notification in Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Notification.#ctor(System.String,System.String)">
+            <summary>
+            Gets information of a Notification
+            </summary>
+            <param name="NotificationID"></param>
+            <param name="AccessToken"></param>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.ID">
+            <summary>
+            The ID of the Notification
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Sender">
+            <summary>
+            The person or profile whose action created this Notification
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Receiver">
+            <summary>
+            The person to be notified
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.CreatedTime">
+            <summary>
+            The time which this Notification was created
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.UpdatedTime">
+            <summary>
+            The time which this Notification was updated
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Title">
+            <summary>
+            The title of this Notification
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Message">
+            <summary>
+            The message in this Notification (usually null)
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Unread">
+            <summary>
+            Whether this notification has not been read by the user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Link">
+            <summary>
+            The URL to the Nofitication story on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Notification.Application">
+            <summary>
+            The application that created this Notification
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Application">
+            <summary>
+            An application registered on Facebook Platform
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Application.#ctor(System.String)">
+            <summary>
+            Gets the information of a Facebook Application
+            </summary>
+            <param name="ApplicationID">Application ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Application.GetPosts(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Get all the posts on the application's wall by the application itself, specified by the Application ID
+            </summary>
+            <param name="ApplicationID">Application ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The application's own posts</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Application.GetFeed(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Get all posts on the wall of the application specified by the Application ID
+            </summary>
+            <param name="ApplicationID">Application ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The application's wall</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Application.GetAlbums(System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the photo albums created by the application specified by the Application ID
+            </summary>
+            <param name="ApplicationID">Application ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The photo albums this application created</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Application.GetReviews(System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the Reviews of this Application
+            </summary>
+            <param name="ApplicationID">Application ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Application.ID">
+            <summary>
+            The application ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Application.Name">
+            <summary>
+            The title of the application
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Application.Description">
+            <summary>
+            The description of the application written by the 3rd party developers
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Application.Category">
+            <summary>
+            The category of the application
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Application.AppPageUrl">
+            <summary>
+            A link to the application's Page on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Application.CanvasName">
+            <summary>
+            The Canvas Name of the application
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.PhotoTag">
+            <summary>
+            Represents a photo tag in a photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PhotoTag.ID">
+            <summary>
+            ID of subject
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PhotoTag.Name">
+            <summary>
+            name of subject
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PhotoTag.X">
+            <summary>
+            x position of tag
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PhotoTag.Y">
+            <summary>
+            y position of tag
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PhotoTag.CreatedTime">
+            <summary>
+            the time the tag was created
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookAppConfig">
+            <summary>
+            Stores Facebook Application settings.
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookAppConfig.AppID">
+            <summary>
+            Facebook Application ID
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookAppConfig.AppSecret">
+            <summary>
+            Facebook Application Secret
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookAppConfig.CanvasAddress">
+            <summary>
+            Facebook Application Canvas Address (in the form of http://apps.facebook.com/xxx )
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookAppConfig.PostAuthorizeRedirectURL">
+            <summary>
+            The redirect url relative to the Canvas Address after authorization
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookAppConfig.#ctor">
+            <summary>
+            Initialize a new instance of FacebookAppConfig
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookAppConfig.CombineWithWebConfig">
+            <summary>
+            Obtain Facebook Application Settings from web.config if settings are unspecified
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookAppConfig.FromWebConfig">
+            <summary>
+            Obtains the Facebook application settings stored in web.config
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.Helpers.ApiProducer">
+            <summary>
+            Produces an Api object from data given by Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.ApiProducer.GetApiFromCode(System.Web.HttpContext,Facebook_Graph_Toolkit.FacebookAppConfig)">
+            <summary>
+            Produce an Api object from the given [code] data and the given Facebook App config data
+            </summary>
+            <param name="context">The HttpContext which contains the [code] parameter response from Facebook</param>
+            <param name="config">Facebook App config</param>
+            <returns>Api object</returns>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Comment">
+            <summary>
+            A comment on Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Comment.#ctor(System.String,System.String)">
+            <summary>
+            Gets Facebook Comment specified by CommmentID
+            </summary>
+            <param name="CommentID"></param>
+            <param name="AccessToken"></param>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Comment.ID">
+            <summary>
+            The Facebook ID of the comment
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Comment.CreatedTime">
+            <summary>
+            The DateTime the comment was created
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Comment.Message">
+            <summary>
+            The comment text
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Comment.Owner">
+            <summary>
+            The user that created the comment
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Comment.LikesCount">
+            <summary>
+            The number of likes on this comment
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Comment.Removable">
+            <summary>
+            Whether this comment can be removed by the application
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.EventMember">
+            <summary>
+            The name, id, and rsvp of a user to an event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.EventMember.Name">
+            <summary>
+            The user's name
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.EventMember.Dd">
+            <summary>
+            The user's id
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.EventMember.RsvpStatus">
+            <summary>
+            The user's rsvp to this event
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.BasicPageData">
+            <summary>
+            Represents basic data about the current view of this page at a Page tab
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicPageData.ID">
+            <summary>
+            Page ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicPageData.Liked">
+            <summary>
+            Whether the user has liked the Page
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.BasicPageData.Admin">
+            <summary>
+            Whether the user is Page Admin
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.StatusMessage">
+            <summary>
+            A status message on a user's wall
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.StatusMessage.ID">
+            <summary>
+            The status message ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.StatusMessage.Poster">
+            <summary>
+            The user who posted the message
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.StatusMessage.Message">
+            <summary>
+            The status message content
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.StatusMessage.UpdatedTime">
+            <summary>
+            The time the message was published
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.StatusMessage.Comments">
+            <summary>
+            All of the comments on this message
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.StatusMessage.LikedUsers">
+            <summary>
+            The users that have liked this message
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Note">
+            <summary>
+            A Facebook note
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.ID">
+            <summary>
+            The note ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.Owner">
+            <summary>
+            The profile that created the note
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.Subject">
+            <summary>
+            The title of the note
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.Message">
+            <summary>
+            The content of the note (a html string)
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.CreatedTime">
+            <summary>
+            The time the note was initially published
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.UpdatedTime">
+            <summary>
+            The time the note was last updated
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.IconUrl">
+            <summary>
+            The URL to the icon that Facebook display with notes
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Note.Comments">
+            <summary>
+            All of the comments on this note
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.PostType">
+            <summary>
+            The type of a Facebook Post
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.PostType.Status">
+            <summary>
+            status update
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.PostType.Link">
+            <summary>
+            post with link attachment
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.PostType.Photo">
+            <summary>
+            post with photo attachment
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.PostType.Video">
+            <summary>
+            post with video attachment
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.PostType.CheckIn">
+            <summary>
+            A check-in post
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.PostType.Unknown">
+            <summary>
+            An unknown post type
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.GroupMember">
+            <summary>
+            Represents a member in a Group
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupMember.Name">
+            <summary>
+            Name of member
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupMember.ID">
+            <summary>
+            User ID of member
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GroupMember.IsAdministrator">
+            <summary>
+            Whether the member is an administrator of the Group
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.Helpers.IframeHelper">
+            <summary>
+            Provides methods to redirect a user in Iframe Applications
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.IframeHelper.IframeRedirect(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Redirects the user to the specified URL
+            </summary>
+            <param name="Url">URL to redirect</param>
+            <param name="EndResponse">Whether to end the current response</param>
+            <param name="relative">Is the URL relative to Facebook Canvas App address?</param>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Event">
+            <summary>
+            Information about an event on Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.#ctor(System.String,System.String)">
+            <summary>
+            Gets details of a Facebook Event
+            </summary>
+            <param name="EventID">Event ID</param>
+            <param name="AccessToken">Access Token</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.GetFeed(System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets a event's wall
+            </summary>
+            <param name="EventID">Event ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The event's wall</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.GetNoReply(System.String,System.String)">
+            <summary>
+            Gets all the users who have not responded to their event invitation yet
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="EventID">Event ID</param>
+            <returns>users who have not responded to their event invitation yet</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.GetMaybe(System.String,System.String)">
+            <summary>
+            Gets all the users who responded "Maybe" to their event invitation
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="EventID">Event ID</param>
+            <returns>All the users who responded "Maybe" to their event invitation</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.GetInvited(System.String,System.String)">
+            <summary>
+            Gets all the users who have been invited to this event
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="EventID">Event ID</param>
+            <returns>All the users who have been invited to this event</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.GetAttending(System.String,System.String)">
+            <summary>
+            Gets all the users who are attending this event
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="EventID">Event ID</param>
+            <returns>All the users who are attending this event</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Event.GetDeclined(System.String,System.String)">
+            <summary>
+            Gets all the users who declined their invitation to this event
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="EventID">Event ID</param>
+            <returns>All the users who declined their invitation to this event</returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.ID">
+            <summary>
+            The event ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.Owner">
+            <summary>
+            The profile that created the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.Name">
+            <summary>
+            The event title
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.Description">
+            <summary>
+            The event description
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.StartTime">
+            <summary>
+            The start time of the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.EndTime">
+            <summary>
+            The end time of the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.Location">
+            <summary>
+            The location for the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.EventPrivacy">
+            <summary>
+            The visibility of the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Event.UpdatedTime">
+            <summary>
+            The last time the event was updated
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.PostAction">
+            <summary>
+            An available action on a post
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookObjects.PostAction.#ctor(System.String,System.String)">
+            <summary>
+            Creates an object that represents an action link which appear next to "Comment" and "Like". May be used when posting feeds.
+            </summary>
+            <param name="Name">Name of action link</param>
+            <param name="Link">Url of action link</param>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PostAction.Name">
+            <summary>
+            Name of action
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.PostAction.Link">
+            <summary>
+            Link to action
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.Place">
+            <summary>
+            Represents a place
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Place.Name">
+            <summary>
+            Name of this place
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Place.ID">
+            <summary>
+            ID of this place
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Place.LocationData">
+            <summary>
+            Location of this place
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.AppReview">
+            <summary>
+            Represents a review of an Application on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppReview.ID">
+            <summary>
+            ID of Review. Apprently useless.
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppReview.Message">
+            <summary>
+            Message left by reviewer
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppReview.Rating">
+            <summary>
+            A number from 1 to 5 inclusive that represents the user's rating on this application, with 1 being the worst and 5 being the best.
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppReview.Reviewer">
+            <summary>
+            The user who made this review
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppReview.Application">
+            <summary>
+            The Application that is being reviewed
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppReview.CreatedTime">
+            <summary>
+            The time which this review was made
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.AppRequest">
+            <summary>
+            Represents an AppRequest on Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.#ctor(System.String,System.String)">
+            <summary>
+            Obtain information about an AppRequest
+            </summary>
+            <param name="RequestID">Request ID</param>
+            <param name="AccessToken">Access Token of either the sender or receiver</param>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.Application">
+            <summary>
+            The Facebook Application that is involved in this request
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.CreatedTime">
+            <summary>
+            The time which this request was created
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.ID">
+            <summary>
+            The ID of the request
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.Message">
+            <summary>
+            The message in this request
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.TrackingData">
+            <summary>
+            The tracking data in this request
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.Sender">
+            <summary>
+            The user who sent this request
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.AppRequest.Target">
+            <summary>
+            The user who receives this request
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Post">
+            <summary>
+            An individual entry in a profile's feed on Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Post.#ctor(System.String,System.String)">
+            <summary>
+            Gets information of a Facebook Post using the Post ID
+            </summary>
+            <param name="PostID">Post ID</param>
+            <param name="AccessToken">Access Token</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Post.GetComments(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the comments in a post
+            </summary>
+            <param name="PostID">PostID</param>
+            <param name="AccessToken">AccessToken</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.ID">
+            <summary>
+            The post ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Owner">
+            <summary>
+            The profile of user/page who posted the message
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Targets">
+            <summary>
+            Profiles mentioned or targeted in this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Message">
+            <summary>
+            The message of this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Story">
+            <summary>
+            The story of this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.PictureUrl">
+            <summary>
+            The URL to the picture in this post, if available
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.IconUrl">
+            <summary>
+            The URL to an icon representing the type of this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.AttachedLink">
+            <summary>
+            The link attached to this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Type">
+            <summary>
+            The type of this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.CreatedTime">
+            <summary>
+            The time the post was initially published
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.UpdatedTime">
+            <summary>
+            The time of the last comment on this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.LikesCount">
+            <summary>
+            The number of likes on this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.LikedUsers">
+            <summary>
+            The users who like this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.CommentsCount">
+            <summary>
+            The number of comments on this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Comments">
+            <summary>
+            The last 50 comments on this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Application">
+            <summary>
+            The application used to create this post
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.Actions">
+            <summary>
+            A list of available actions on the post (includig commenting, liking and an optional app-specified action)
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.WithTags">
+            <summary>
+            A list of users who are tagged in this check-in
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Post.CheckInPlace">
+            <summary>
+            The place that the user has checked in
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Page">
+            <summary>
+            a Facebook Page
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Page.#ctor(System.String)">
+            <summary>
+            Gets information of a Facebook Page
+            </summary>
+            <param name="PageID">Page ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Page.GetAlbums(System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the albums a Page has created
+            </summary>
+            <param name="PageID">Page ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The photo albums a Page has created</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Page.GetFeed(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets a Page's wall
+            </summary>
+            <param name="PageID">Page ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The Page's wall</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Page.GetPosts(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the Page's own posts
+            </summary>
+            <param name="PageID">Page ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.ID">
+            <summary>
+            The Page's ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Name">
+            <summary>
+            The Page's name
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.PictureUrl">
+            <summary>
+            The URL to the Page's profile picture
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.NavigateUrl">
+            <summary>
+            The link to the Page on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Category">
+            <summary>
+            The Page's category
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Website">
+            <summary>
+            The Page's website
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Username">
+            <summary>
+            The Page's username
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Founded">
+            <summary>
+            How and by whom the subject of the Page is founded
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.CompanyOverview">
+            <summary>
+            The company overview of the Page's subject
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Mission">
+            <summary>
+            The Mission of the Page's subject
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.LikesCount">
+            <summary>
+            The number of users who like the Page
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Genre">
+            <summary>
+            The genre of the Page's subject
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Page.Biography">
+            <summary>
+            The biography of the Page's subject
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.Location">
+            <summary>
+            Represents a location
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Location.City">
+            <summary>
+            The city at this location
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Location.Country">
+            <summary>
+            The country at this location
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Location.Latitude">
+            <summary>
+            The Latitude of this location
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Location.Longitude">
+            <summary>
+            The Longitude of this location
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.Location.Street">
+            <summary>
+            The street of this location
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Album">
+            <summary>
+            a photo album on Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Album.#ctor(System.String,System.String)">
+            <summary>
+            Gets the information of a photo album on Facebook
+            </summary>
+            <param name="AlbumID">Album ID</param>
+            <param name="AccessToken">Access Token</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Album.GetPhotos(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets photos in the specified Facebook Album
+            </summary>
+            <param name="AlbumID">Album ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Album.GetComments(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the comments in the specified Facebook Album
+            </summary>
+            <param name="AlbumID">Album ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.ID">
+            <summary>The photo album ID</summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.Owner">
+            <summary>
+            The profile that created this album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.Name">
+            <summary>
+            The title of the album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.Location">
+            <summary>
+            The location of the album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.Description">
+            <summary>
+            The description of the album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.NavigateUrl">
+            <summary>
+            A link to this album on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.Count">
+            <summary>
+            The number of photos in this album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.Type">
+            <summary>
+            The type of the album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.CreatedTime">
+            <summary>
+            The time the photo album was initially created
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Album.UpdatedTime">
+            <summary>
+            The last time the photo album was updated
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.CanvasPage">
+            <summary>
+            The class should be inherited in a .aspx page in a Facebook Iframe Application
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.CanvasPage.RequireLogin">
+            <summary>
+            Whether the user is required to authorize the application to view this page
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.CanvasPage.Permissions">
+            <summary>
+            The user will be prompted to grant these Permissions at authorization
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.CanvasPage.FacebookAppInfo">
+            <summary>
+            Manages Facebook Application configuration of this page
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.CanvasPage.OnLoad(System.EventArgs)">
+            <summary>
+            Event handler of 'OnLoad' event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.CanvasPage.GetGrantedPermissions">
+            <summary>
+            Gets the permissions that have been granted by the user
+            </summary>
+            <returns>A list containing permissions that have been granted by the user</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.CanvasPage.RedirectToFacebookAuthorization">
+            <summary>
+            Redirect the user to authorize the Application
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.CanvasPage.ResolveCanvasRelativeAddress(System.String)">
+            <summary>
+            Resolve an address that is relative to the Canvas Address to absolute address
+            </summary>
+            <param name="RelativeAddress">Address relative to Canvas Address</param>
+            <returns>Absolute address</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.CanvasPage.CaptureAppRequestIDs">
+            <summary>
+            Captures the AppRequest IDs from the querystring
+            </summary>
+            <returns>An IList containing the AppRequest IDs</returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.CanvasPage.Api">
+             <summary>
+            Stores the current Access Token and provides methods to make Api calls
+             </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.CanvasPage.FBUserID">
+            <summary>
+            The UserID of the current Facebook user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.CanvasPage.IsAuthorized">
+            <summary>
+            Indicates whether the user has authorized the application
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.CanvasPage.UserData">
+            <summary>
+            Basic data about the user who is browsing this Iframe Application
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.Relationship">
+            <summary>
+            Represents a user's realtionship status on Facebook
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Single">
+            <summary>
+            Single
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.InRelationship">
+            <summary>
+            In a relationship
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Engaged">
+            <summary>
+            Engaged
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Married">
+            <summary>
+            Married
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Complicated">
+            <summary>
+            It's complicated
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Open">
+            <summary>
+            In an open relationship
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Widowed">
+            <summary>
+            Widowed
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Separated">
+            <summary>
+            Separated
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.FacebookObjects.Relationship.Divorced">
+            <summary>
+            Divorced
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter">
+            <summary>
+            Use this class to filter objects returned by Graph Api
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter.#ctor">
+            <summary>
+            Constructs a new instance of GraphApiFilter class
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter.Offset">
+            <summary>
+            Number of elements to skip before returning the first element
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter.Limit">
+            <summary>
+            Maximum number of elements returned
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter.Since">
+            <summary>
+            Earliest created time of elements
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter.Until">
+            <summary>
+            Latest created time of elements
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.TabPage">
+            <summary>
+            Inherit this class in a page that will be displayed in an Page tab
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.TabPage.RequireLogin">
+            <summary>
+            Whether the user is required to authorize the application to view this page
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.TabPage.Permissions">
+            <summary>
+            The user will be prompted to grant these Permissions at authorization
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.TabPage.FacebookAppInfo">
+            <summary>
+            Manages Facebook Application configuration of this page
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.TabPage.OnLoad(System.EventArgs)">
+            <summary>
+            OnLoad method
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.TabPage.GetGrantedPermissions">
+            <summary>
+            Gets the permissions that have been granted by the user
+            </summary>
+            <returns>A list containing permissions that have been granted by the user</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.TabPage.RedirectToFacebookAuthorization">
+            <summary>
+            Redirect the user to authorize the Application
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.TabPage.Api">
+             <summary>
+            Stores the current Access Token and provides methods to make Api calls
+             </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.TabPage.PageData">
+            <summary>
+            Basic data about the current view of this page at a Page tab
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.TabPage.UserData">
+            <summary>
+            Basic data about the user who is browsing this Iframe Application
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.User">
+            <summary>
+            represents a Facebook User
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.#ctor(System.String)">
+            <summary>
+            Gets the general information of a Facebook User. For detailed information, pass the AccessToken in a overloaded of this constructor.
+            </summary>
+            <param name="UserID">User ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.#ctor(System.String,System.String)">
+            <summary>
+            Gets the information of a Facebook User.
+            </summary>
+            <param name="UserID">User ID</param>
+            <param name="AccessToken">Access Token</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetAlbums(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets all Photo Albums of a user
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The albums that belong to the user</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetFeed(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the wall of a user
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The user's wall</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetPosts(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets posts by a user
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The user's own posts</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetHome(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the feeds that are seen by the user on the homepage
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The feeds on the user's homepage</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetLinks(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the links posted by the current user
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The user's posted links</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetFriends(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the friends of the user
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The user's friends</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetStatusMessages(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the user's status updates
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The user's status updates</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetNotes(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the notes of a particular user
+            </summary>
+            <param name="UserID">User ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetLikedPages(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets all the Pages the user has liked
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>All the Pages the user has liked</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetGroups(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the Groups that the user has joined
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The groups the user is a member of</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetEvents(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the events the user is or maybe attending
+            </summary>
+            <param name="AccessToken">Access Token</param>
+            <param name="UserID">User ID</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns>The events the user is or maybe attending</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.User.GetNotifications(System.String,System.String,System.Boolean,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the notifications of the user
+            </summary>
+            <param name="UserID">User ID</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <param name="UnreadOnly">Whether to only return Notifications that are unread by the user</param>
+            <returns>The user's notifications</returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.ID">
+            <summary>
+            The user's Facebook ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Name">
+            <summary>
+            The user's full name
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.FirstName">
+            <summary>
+            The user's first name
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.MiddleName">
+            <summary>
+            The user's middle name
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.LastName">
+            <summary>
+            The user's last name
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Username">
+            <summary>
+            The user's username
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.NavigateUrl">
+            <summary>
+            The URL of the profile for the user on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Gender">
+            <summary>
+            The user's gender
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Email">
+            <summary>
+            The proxied or contact email address granted by the user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Timezone">
+            <summary>
+            The user's timezone offset from UTC
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Locale">
+            <summary>
+            The user's locale
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Verified">
+            <summary>
+            The user's account verification status
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.UpdatedTime">
+            <summary>
+            The last time the user's profile was updated
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Biography">
+            <summary>
+            The user's biography
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Birthday">
+            <summary>
+            The user's birthday
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Location">
+            <summary>
+            The user's current location
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Hometown">
+            <summary>
+            The user's hometown
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Languages">
+            <summary>
+            The user's languages
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.RelationshipStatus">
+            <summary>
+            The user's relationship status
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.PoliticalView">
+            <summary>
+            The user's political view
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.User.Religion">
+            <summary>
+            The user's religion
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Photo">
+            <summary>
+            An individual photo within an album on Facebook
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Photo.#ctor(System.String,System.String)">
+            <summary>
+            Get the information of a Facebook Photo
+            </summary>
+            <param name="PhotoID">Photo ID</param>
+            <param name="AccessToken">Access Token</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Photo.GetComments(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.GraphApiFilter)">
+            <summary>
+            Gets the comments of this photo
+            </summary>
+            <param name="PhotoID">Object ID of photo</param>
+            <param name="AccessToken">Access Token</param>
+            <param name="FilterOptions">A GraphApiFilter instance specifying filter options applied by Facebook</param>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.ID">
+            <summary>
+            The photo ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.Owner">
+            <summary>
+            The profile (user or page) that posted this photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.Name">
+            <summary>
+            The caption given to this photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.AlbumThumbnailUrl">
+            <summary>
+            The url of the album-sized view of the photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.FullResolutionUrl">
+            <summary>
+            The url of the full-sized source of the photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.Height">
+            <summary>
+            The height of the photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.Width">
+            <summary>
+            The width of the photo
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.NavigateUrl">
+            <summary>
+            A link to the photo on Facebook
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.AlbumPosition">
+            <summary>
+            The position of the photo in its album
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.CreatedTime">
+            <summary>
+            The time the photo was initially published
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.UpdatedTime">
+            <summary>
+            The last time the photo or its caption was updated
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Photo.Tags">
+            <summary>
+            The tags in this photo. Returns null if there are no tags.
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.Api">
+            <summary>
+            Stores the current Access Token and provides methods to make Api calls using this Access Token
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.#ctor(System.String)">
+            <summary>
+            Constructor of new Api object. Use this if you already have an Access Token.
+            </summary>
+            <param name="AccessToken">Access Token given by Facebook</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.GetPictureURL(System.String)">
+            <summary>
+            Get the URL of the picture of a Facebook object
+            </summary>
+            <param name="ID"></param>
+            <returns>The URL of picture</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.Fql(System.String)">
+            <summary>
+            Performs a FQL query and return the result
+            </summary>
+            <param name="FqlQuery">FQL query</param>
+            <returns>query result</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.FqlMultiQuery(System.Collections.Generic.KeyValuePair{System.String,System.String}[])">
+            <summary>
+            Performs multiple FQL queries and return the results
+            </summary>
+            <param name="Queries">Queries to be executed</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.FqlPublic(System.String)">
+            <summary>
+            Performs a FQL query that does not require an access token and obtain the result
+            </summary>
+            <param name="FqlQuery">FQL query</param>
+            <returns>query result</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.CreateEvent(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Creates an event on Facebook
+            </summary>
+            <param name="EventName">Event title</param>
+            <param name="Location">Location of Event</param>
+            <param name="StartTime">Start Time of Event, in UTC</param>
+            <param name="EndTime">End Time of Event, in UTC</param>
+            <returns>Event ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.CreateEventAsync(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Creates an event on Facebook with an async call
+            </summary>
+            <param name="EventName">Event title</param>
+            <param name="Location">Location of Event</param>
+            <param name="StartTime">Start Time of Event, in UTC</param>
+            <param name="EndTime">End Time of Event, in UTC</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.EditEventLocationAsync(System.String,System.String)">
+            <summary>
+            Edits the location of an Event on Facebook
+            </summary>
+            <param name="EventID">Event ID</param>
+            <param name="Location">new location of Event</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.RsvpEventAsync(System.String,Facebook_Graph_Toolkit.FacebookObjects.Rsvp)">
+            <summary>
+            Rsvp an Event on behalf of the user
+            </summary>
+            <param name="EventID">Event ID</param>
+            <param name="EventRsvp">Rsvp (attending / maybe / declined)</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostComment(System.String,System.String)">
+            <summary>
+            Post a comment to a certain post on Facebook
+            </summary>
+            <param name="PostID">Post ID</param>
+            <param name="message">Comment to be posted</param>
+            <returns>Comment ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.DeleteObject(System.String)">
+            <summary>
+            Delete an object on Facebok. The object must be created by the application.
+            </summary>
+            <param name="ID">ID of object</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostLike(System.String)">
+            <summary>
+            Like a certain post / comment on Facebook
+            </summary>
+            <param name="ID">Post ID / Comment ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.DeleteLike(System.String)">
+            <summary>
+            Delete a like on a certain post / comment on Facebook
+            </summary>
+            <param name="ID">Post ID / Comment ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeed(System.String)">
+            <summary>
+            Posts a message to the user's wall
+            </summary>
+            <param name="message">Message to be posted</param>
+            <returns>Post ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeedAsync(System.String)">
+            <summary>
+            Posts a message to the user's wall with an async method
+            </summary>
+            <param name="message">Message to be posted</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeedToTarget(System.String,System.String)">
+            <summary>
+            Post a message to the wall of a Page or user's friend
+            </summary>
+            <param name="ID">User ID / Page ID</param>
+            <param name="message">Message to be posted</param>
+            <returns>Post ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeedToTargetAsync(System.String,System.String)">
+            <summary>
+            Post a message to the wall of a Page or user's friend via an async method
+            </summary>
+            <param name="ID">User ID / Page ID</param>
+            <param name="message">Message to be posted</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeed(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment,Facebook_Graph_Toolkit.FacebookObjects.PostAction)">
+            <summary>
+            Post a message with link attachment to the user's wall
+            </summary>
+            <param name="message">The message</param>
+            <param name="picture">If available, a URL to the picture included with this post.</param>
+            <param name="link">The link attached to this post</param>
+            <param name="action">An action link that appears next to "Comment" and "Like".</param>
+            <returns>Post ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeedAsync(System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment,Facebook_Graph_Toolkit.FacebookObjects.PostAction)">
+            <summary>
+            Post a message with link attachment to the user's wall with an async method
+            </summary>
+            <param name="message">The message</param>
+            <param name="picture">If available, a URL to the picture included with this post.</param>
+            <param name="link">The link attached to this post</param>
+            <param name="action">An action link that appears next to "Comment" and "Like".</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeedToTarget(System.String,System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment,Facebook_Graph_Toolkit.FacebookObjects.PostAction)">
+            <summary>
+            Post a message with link attachment to the wall of a Page or user's friend
+            </summary>
+            <param name="ID">User ID / Page ID</param>
+            <param name="message">The message</param>
+            <param name="picture">If available, a URL to the picture included with this post.</param>
+            <param name="link">The link attached to this post</param>
+            <param name="action">An action link that appears next to "Comment" and "Like".</param>
+            <returns>Post ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PostFeedToTargetAsync(System.String,System.String,System.String,Facebook_Graph_Toolkit.FacebookObjects.LinkAttachment,Facebook_Graph_Toolkit.FacebookObjects.PostAction)">
+            <summary>
+            Post a message with link attachment to the wall of a Page or user's friend with an async method
+            </summary>
+            <param name="ID">User ID / Page ID</param>
+            <param name="message">The message</param>
+            <param name="picture">If available, a URL to the picture included with this post.</param>
+            <param name="link">The link attached to this post</param>
+            <param name="action">An action link that appears next to "Comment" and "Like".</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PublishPhoto(System.Drawing.Bitmap,System.String)">
+            <summary>
+            Publishes a photo to the app's album and post it on the user's wall
+            </summary>
+            <param name="photo">photo to be published</param>
+            <param name="message">message with this photo</param>
+            <returns>PhotoID of the photo published</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PublishPhoto(System.String,System.Drawing.Bitmap,System.String)">
+            <summary>
+            Publishes a photo to a specific album and post it on the user's wall
+            </summary>
+            <param name="AlbumID">AlbumID of photo album which the photo will be published to</param>
+            <param name="photo">photo to be published</param>
+            <param name="message">message with this photo</param>
+            <returns>PhotoID of the photo published</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PublishPhotoAsync(System.Drawing.Bitmap,System.String)">
+            <summary>
+            Publishes a photo to the app's album and post it on the user's wall
+            </summary>
+            <param name="photo">photo to be published</param>
+            <param name="message">message with this photo</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.PublishPhotoAsync(System.String,System.Drawing.Bitmap,System.String)">
+            <summary>
+            Publishes a photo to a specific album and post it on the user's wall
+            </summary>
+            <param name="AlbumID">AlbumID of photo album which the photo will be published to</param>
+            <param name="photo">photo to be published</param>
+            <param name="message">message with this photo</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.CreateNote(System.String,System.String)">
+            <summary>
+            Creates a new Note on Facebook. The method returns tne Note ID of the Note created.
+            </summary>
+            <param name="Title">Title of the Note</param>
+            <param name="Message">Content of the Note</param>
+            <returns>Note ID</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.MarkNotificationAsRead(System.String)">
+            <summary>
+            Mark a Notification as read
+            </summary>
+            <param name="NotificationID">Notification ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.ValidateAccessToken(System.String)">
+            <summary>
+            Use a Graph Api connection to test whether the Access Token is valid
+            </summary>
+            <param name="AccessToken">Access Token to be tested</param>
+            <returns>The result of the Access Token validation test</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.GraphApi.Api.ExtendAccessToken(System.String,System.String,System.String)">
+            <summary>
+            Extends an the expire time of an AccessToken to 60 days from now
+            </summary>
+            <param name="AppID">Facebook Application ID</param>
+            <param name="AppSecret">Facebook Application Secret</param>
+            <param name="OriginalAccessToken">Current AccessToken</param>
+            <returns>Api object which contains the new AccessToken and its expire time</returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Api.AccessToken">
+            <summary>
+            Access Token of the current session. Used to make Api calls.
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.GraphApi.Api.Expires">
+            <summary>
+            The DateTime, in UTC, in which the access_token expires
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult">
+            <summary>
+            Represents the result of an Access Token Validation Test
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult.Success">
+            <summary>
+            The Access Token is valid and can be used
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult.ChangedPassword">
+            <summary>
+            The Access Token is invalid because the user changed the his or her password.
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult.NotAuthorized">
+            <summary>
+            The Access Token is invalid because the user has not authorized or has removed the Application.
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult.LoggedOut">
+            <summary>
+            The Access Token is invalid because the user has logged out.
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult.Expired">
+            <summary>
+            The Access Token is invalid because it has expired.
+            </summary>
+        </member>
+        <member name="F:Facebook_Graph_Toolkit.GraphApi.AccessTokenValidationResult.UnknownError">
+            <summary>
+            It appears that the Access Token is invalid, but the exact cause is indetermined.
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.UserEvent">
+            <summary>
+            An event of a user
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.UserEvent.Name">
+            <summary>
+            The event title
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.UserEvent.StartTime">
+            <summary>
+            The start time of the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.UserEvent.EndTime">
+            <summary>
+            The end time of the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.UserEvent.Location">
+            <summary>
+            The location of the event
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.UserEvent.ID">
+            <summary>
+            The event ID
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.UserEvent.RsvpStatus">
+            <summary>
+            The user's rsvp to this event
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookObjects.NameIDPair">
+            <summary>
+            The name and id of a Facebook User/Page/Application
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.FacebookObjects.NameIDPair.ToString">
+            <summary>
+            Converts the current NameIDPair object to is string representation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.NameIDPair.Name">
+            <summary>
+            name of the Facebook User/Page/Application
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookObjects.NameIDPair.ID">
+            <summary>
+            id of the Facebook User/Page/Application
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.Helpers.WebResponseHelper">
+            <summary>
+            Helper functions related to connecting to Facebook's server
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.WebResponseHelper.GetJsonFromFacebookObject(System.String,System.String)">
+            <summary>
+            Gets the JSON Object which represents the Facebook Graph Api Object. Not for connections.
+            </summary>
+            <param name="ID">Facebook ID</param>
+            <param name="AccessToken">Graph Api Access Token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.WebResponseHelper.GetWebResponse(System.String)">
+            <summary>
+            Gets a string from a url without caching
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.Helpers.TestUserManager">
+            <summary>
+            Provides methods to manage test users
+            </summary>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.TestUserManager.#ctor(System.String,System.String)">
+            <summary>
+            Initiate a new instance of TestUserManager
+            </summary>
+            <param name="AppAccessToken">App Access Token</param>
+            <param name="FacebookAppID">App ID</param>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.TestUserManager.CreateTestUser(System.Boolean,System.String)">
+            <summary>
+            Create a new Test User
+            </summary>
+            <param name="IsAppInstalled">Whether the application is installed upon user creation.</param>
+            <param name="ExtendedPermissions">Extended Permissions granted by the user to the app</param>
+            <returns>Details of new Test User</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.TestUserManager.GetTestUsers">
+            <summary>
+            Gets the list of Test Users of this app. Note that emails and passwords are unavailable.
+            </summary>
+            <returns>List of Test Users</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.TestUserManager.ChangePassword(System.String,System.String)">
+            <summary>
+            Change the password of a Test User
+            </summary>
+            <param name="UserID">User ID of Test User</param>
+            <param name="NewPassword">New Password</param>
+            <returns>Whether the operation is successful</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.TestUserManager.DeleteTestUser(System.String)">
+            <summary>
+            Delete a Test User
+            </summary>
+            <param name="UserID">User ID of Test User</param>
+            <returns>Whether the operation is successful</returns>
+        </member>
+        <member name="M:Facebook_Graph_Toolkit.Helpers.TestUserManager.MakeFriends(System.String,System.String,System.String)">
+            <summary>
+            Send a friend request / accept a friend request
+            </summary>
+            <param name="FromUserID">UserID of Test User initiating the action</param>
+            <param name="ToUserID">User ID of target Test User</param>
+            <param name="FromAccessToken">Access Token of the Test User initiating the action</param>
+            <returns>Whether the operation is successful</returns>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.FacebookException">
+            <summary>
+            The Exception that is thrown by Facebook Graph Toolkit
+            </summary>
+        </member>
+        <member name="P:Facebook_Graph_Toolkit.FacebookException.Message">
+            <summary>
+            The message of the Exception
+            </summary>
+        </member>
+        <member name="T:Facebook_Graph_Toolkit.RequiredLoginException">
+            <summary>
+            The Exception that is thrown when making a Graph Api call to Facebook that requires the user to authorize the application but the user has not done so.
+            </summary>
+        </member>
+    </members>
+</doc>

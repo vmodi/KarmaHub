@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet_02.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+    <div class="header">
+            <div class="title">
+                <h1>
+                    YOUR WORLD OF KARMA</h1>
+            </div>
+            <div class="loginDisplay">
+            </div>
+            <div class="clear hideSkiplink">
+            </div>
+        </div>
+<%--    <div id="main">
+        <table cellspacing="15px" style="background-color:#DDD;width:100%"><tr>
+        <td><a href="http://apps.facebook.com/karmahub/" target="_top">Home</a></td>
+        <td><a href="http://apps.facebook.com/karmahub/Demo.aspx" target="_top">Demo</a></td>
+        <td style="width:100%"></td>
+        </tr></table>--%>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <%--<br />
+        <p>This example is using Facebook Graph Toolkit <asp:Label ID="FGT_Version" runat="server" /></p>
+    </div>--%>
+            
+    </form>
+</body>
+</html>
