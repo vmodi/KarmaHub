@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JSON</name>
+    </assembly>
+    <members>
+        <member name="T:JSON.JsonObject">
+            <summary>
+            JsonObject class
+            </summary>
+        </member>
+        <member name="F:JSON.JsonObject.Entries">
+            <summary>
+            The properties of this JSON Object
+            </summary>
+        </member>
+        <member name="M:JSON.JsonObject.#ctor">
+            <summary>
+            Creates an empty JsonObject
+            </summary>
+        </member>
+        <member name="M:JSON.JsonObject.#ctor(System.String)">
+            <summary>
+            Create a new JsonObject from a string
+            </summary>
+            <param name="JsonString">string that represents JSON Object</param>
+        </member>
+        <member name="M:JSON.JsonObject.Deserialize``1(System.Boolean)">
+            <summary>
+            Deserialize the current JsonObject to a strongly typed object
+            </summary>
+            <typeparam name="T">The type of the returned object</typeparam>
+            <param name="RequireAttribute">Whether only to set the value of properties marked with JsonElementAttribute</param>
+            <returns>A strongly typed objects containing data in the JsonObject</returns>
+        </member>
+        <member name="M:JSON.JsonObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds the specified key and value to the JsonObject. This method is not supported.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:JSON.JsonObject.Add(System.String,System.Object)">
+            <summary>
+            Adds the specified key and value to the JsonObject. This method is not supported.
+            </summary>
+            <param name="Key">Key of entry</param>
+            <param name="Value">Value of entry</param>
+        </member>
+        <member name="M:JSON.JsonObject.Clear">
+            <summary>
+            Removes all keys and values from the JsonObject.
+            </summary>
+        </member>
+        <member name="M:JSON.JsonObject.Remove(System.String)">
+            <summary>
+            Removes the item with the specified key from the JsonObject. This method is not supported.
+            </summary>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JSON.JsonObject.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String@System#Object}}#CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            Copy all the entries to an array, starting at a particular array index.
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:JSON.JsonObject.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Determines whether the JsonObject contains the specified key/value pair.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JSON.JsonObject.ContainsKey(System.String)">
+            <summary>
+            Determines whether the JsonObject contains the specified key.
+            </summary>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JSON.JsonObject.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <param name="Key"></param>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JSON.JsonObject.ToString">
+            <summary>
+            Returns a string representation of the current JsonObject
+            </summary>
+            <returns>A string</returns>
+        </member>
+        <member name="M:JSON.JsonObject.ToHtmlString">
+            <summary>
+            Gets the html representation of the JsonObject
+            </summary>
+            <returns>A html string representing the JsonObject</returns>
+        </member>
+        <member name="P:JSON.JsonObject.Item(System.String)">
+            <summary>
+            Gets a property of the current JSON Object by key
+            </summary>
+            <param name="Key">Key of property</param>
+            <returns>Value of property. Returns null if property is not found.</returns>
+        </member>
+        <member name="P:JSON.JsonObject.Count">
+            <summary>
+            The number of key/value pairs contained in the JsonObject
+            </summary>
+        </member>
+        <member name="P:JSON.JsonObject.IsReadOnly">
+            <summary>
+            Whether the JsonObject is read-only. This value is always true.
+            </summary>
+        </member>
+        <member name="P:JSON.JsonObject.Keys">
+            <summary>
+            All the keys in the JsonObject
+            </summary>
+        </member>
+        <member name="P:JSON.JsonObject.Values">
+            <summary>
+            All the values in the JsonObject
+            </summary>
+        </member>
+        <member name="T:JSON.JsonHelper">
+            <summary>
+            JsonHelper class
+            </summary>
+        </member>
+        <member name="T:JSON.JsonArray">
+            <summary>
+            JsonArray class
+            </summary>
+        </member>
+        <member name="M:JSON.JsonArray.#ctor">
+            <summary>
+            Creates an empty JsonArray
+            </summary>
+        </member>
+        <member name="M:JSON.JsonArray.#ctor(System.String)">
+            <summary>
+            Create a new JsonArray
+            </summary>
+            <param name="JsonString"></param>
+        </member>
+        <member name="M:JSON.JsonArray.Deserialize``1(System.Boolean)">
+            <summary>
+            Deserialize the current JsonArray to a <![CDATA[List<>]]>object
+            </summary>
+            <typeparam name="T">The type of objects the List is holding</typeparam>
+            <param name="RequireAttribute">Whether only to set the value of properties marked with JsonElementAttribute</param>
+            <returns>List of strongly typed objects equipvalent to the JsonArray</returns>
+        </member>
+        <member name="M:JSON.JsonArray.Add(System.Object)">
+            <summary>
+            Adds an item to the JsonArray
+            </summary>
+            <param name="Item">Item to be added</param>
+            <returns>Index of the added item</returns>
+        </member>
+        <member name="M:JSON.JsonArray.Clear">
+            <summary>
+            Removes all items in the JsonArray
+            </summary>
+        </member>
+        <member name="M:JSON.JsonArray.Contains(System.Object)">
+            <summary>
+            Determines whether the JsonArray contains a specific value
+            </summary>
+            <param name="Item">Value to be checked</param>
+            <returns>True if the specified value is found in the JsonArray, otherwise False</returns>
+        </member>
+        <member name="M:JSON.JsonArray.IndexOf(System.Object)">
+            <summary>
+            Determines the index of the first occurrence of a specific value
+            </summary>
+            <param name="Item">Value to be checked</param>
+            <returns>Index of the first occurrence of the specified value, -1 if the value is not found</returns>
+        </member>
+        <member name="M:JSON.JsonArray.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the JsonArray at the specified index
+            </summary>
+            <param name="Index">Index of item to be inserted</param>
+            <param name="Item">Value of item to be inserted</param>
+        </member>
+        <member name="M:JSON.JsonArray.Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specified value from the JsonArray
+            </summary>
+            <param name="Item">Value to be removed</param>
+        </member>
+        <member name="M:JSON.JsonArray.RemoveAt(System.Int32)">
+            <summary>
+            Removes the item at the specified index
+            </summary>
+            <param name="Index">Index of item to be removed</param>
+        </member>
+        <member name="M:JSON.JsonArray.ToString">
+            <summary>
+            Returns a string representation of the current JsonArray
+            </summary>
+            <returns>A string representation of the current JsonArray</returns>
+        </member>
+        <member name="P:JSON.JsonArray.Item(System.Int32)">
+            <summary>
+            Gets the object located at the specified index in the JsonArray
+            </summary>
+            <param name="Index">Index of object</param>
+            <returns></returns>
+        </member>
+        <member name="P:JSON.JsonArray.Count">
+            <summary>
+            The number of objects contained in this JsonArray
+            </summary>
+        </member>
+        <member name="T:JSON.JsonElementAttribute">
+            <summary>
+            Indicates that this property is associated with a KeyValuePair in a JSON object
+            </summary>
+        </member>
+        <member name="M:JSON.JsonElementAttribute.#ctor">
+            <summary>
+            Initiate a new instance of JsonElementAttribute class
+            </summary>
+        </member>
+        <member name="P:JSON.JsonElementAttribute.Name">
+            <summary>
+            The key of the value of this property in a JSON object
+            </summary>
+        </member>
+    </members>
+</doc>
